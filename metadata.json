@@ -1,0 +1,8 @@
+{
+  "name": "Soi Trang TikTok Shop",
+  "description": "Checklist tối ưu TikTok Shop - Soi từng vị trí trên trang sản phẩm và trang shop theo quy định sàn và tiêu chuẩn hiển thị.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

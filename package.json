@@ -1,0 +1,14 @@
+{
+  "name": "soi-tiktokshop",
+  "version": "1.0.0",
+  "description": "Checklist tối ưu TikTok Shop - Soi từng vị trí trên trang sản phẩm và trang shop theo quy định sàn và tiêu chuẩn hiển thị.",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node -e \"console.log('Build complete')\""
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Soi Trang TikTok Shop</title>
+  <meta name="description" content="Checklist tối ưu TikTok Shop - Soi từng vị trí trên trang sản phẩm và trang shop theo quy định sàn và tiêu chuẩn hiển thị.">
+  <meta property="og:title" content="Soi Trang TikTok Shop">
+  <meta property="og:description" content="Checklist tối ưu TikTok Shop - Soi từng vị trí trên trang sản phẩm và trang shop theo quy định sàn và tiêu chuẩn hiển thị.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+  <style>
+  :root{
+    color-scheme:light;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    --bg:#FFFFFF; --surface:#FAF6F4; --surface-2:#F3EDEA; --line:#EBE2DE; --ink:#24191B; --muted:#76696B;
+    --accent:#FE2C55; --accent-ink:#D81E45; --accent-soft:#FFEBEF; --cyan:#25F4EE; --tt:#161823;
+    --rule:#B42318; --rule-soft:#FDEDEB; --tip:#137A4C; --tip-soft:#E6F4EC; --ex:#2453A0; --ex-soft:#EAF0FA;
+    --gold:#B7791F; --gold-soft:#FFF6E0; --frame:#1E1718;
+    --f:'Montserrat',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px)}
+  body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}
+  img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+  *{box-sizing:border-box}
+  html,body{background:var(--bg);color:var(--ink)}
+  body{font-family:var(--f);font-size:15px;line-height:1.55}
+  button,input,textarea{font-family:inherit;color:inherit}
+  .app{max-width:1200px;margin:0 auto;padding:20px 16px 48px}
+  /* header */
+  .top{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:flex-end;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  .brand{min-width:0}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  h1{font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:-.02em;margin:2px 0 4px;line-height:1.1;text-wrap:balance}
+  .sub{color:var(--muted);margin:0;max-width:60ch;font-size:14px}
+  .controls{display:flex;flex-wrap:wrap;gap:10px 14px}
+  .seg{display:inline-flex;background:var(--surface-2);border-radius:999px;padding:4px;gap:2px}
+  .seg button{border:0;background:transparent;padding:8px 14px;border-radius:999px;font-weight:600;font-size:13px;cursor:pointer;color:var(--muted);white-space:nowrap}
+  .seg button[aria-pressed="true"]{background:var(--bg);color:var(--ink);box-shadow:0 1px 3px rgba(36,25,27,.14)}
+  .seg button:focus-visible,.btn:focus-visible,.dot:focus-visible{outline:2px solid var(--ex);outline-offset:2px}
+  .modebar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:16px 0 22px;font-size:14px;color:var(--muted)}
+  .modebar b{color:var(--ink)}
+  .stat{display:inline-flex;gap:6px;align-items:center;padding:4px 10px;background:var(--surface);border-radius:8px;font-variant-numeric:tabular-nums;font-size:13px}
+  /* main grid */
+  .main{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+  @media(min-width:900px){.main{grid-template-columns:400px minmax(0,1fr);align-items:start}.phonewrap{position:sticky;top:16px}}
+  /* phone */
+  .phone{width:100%;max-width:390px;margin:0 auto;border:10px solid var(--frame);border-radius:38px;background:var(--frame);box-shadow:0 18px 40px -18px rgba(36,25,27,.45)}
+  .screen{background:#F5F5F5;border-radius:28px;height:min(740px,calc(100vh - 80px));min-height:520px;overflow-y:auto;overflow-x:hidden;position:relative;color:#222;font-size:13px;scrollbar-width:thin}
+  .statusbar{display:flex;justify-content:space-between;padding:10px 20px 4px;font-size:11px;font-weight:700;background:#fff}
+  .appbar{display:flex;align-items:center;gap:10px;padding:6px 12px 8px;background:#fff}
+  .appbar .search{flex:1;height:30px;border:0;background:#F1F1F2;border-radius:6px;font-size:11px;color:#999;display:flex;align-items:center;padding:0 8px}
+  .ic{width:20px;height:20px;flex:none}
+  .card{background:#fff;margin-top:8px;padding:12px}
+  .card:first-child{margin-top:0}
+  /* hotspots */
+  .hs{position:relative;cursor:pointer;border-radius:6px;outline:2px dashed transparent;outline-offset:-2px;transition:outline-color .2s,background .2s}
+  .hs:hover{outline-color:rgba(238,77,45,.45)}
+  .hs.on{outline:2px solid var(--accent);background:rgba(238,77,45,.05)}
+  .dot{position:absolute;top:6px;right:6px;z-index:5;min-width:26px;height:26px;padding:0 6px;border-radius:13px;border:2px solid #fff;background:var(--accent);color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.25);font-variant-numeric:tabular-nums}
+  .dot::after{content:"";position:absolute;inset:-6px;border-radius:20px;border:2px solid var(--accent);opacity:0;animation:pulse 2s infinite}
+  @keyframes pulse{0%{transform:scale(.8);opacity:.7}100%{transform:scale(1.35);opacity:0}}
+  @media (prefers-reduced-motion:reduce){.dot::after{animation:none;display:none}*{transition:none!important}}
+  /* product mock */
+  .hero{position:relative;background:#fff}
+  .hero>svg{display:block;width:100%;height:auto}
+  .vbadge svg{width:10px;height:10px;flex:none}
+  .vbadge{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.62);color:#fff;border-radius:14px;padding:4px 10px 4px 8px;font-size:11px;font-weight:700;display:flex;gap:5px;align-items:center}
+  .vbadge.hs{position:absolute;cursor:pointer}
+  .vbadge .dot{top:-14px;right:-16px}
+  .thumbs{display:flex;gap:6px;overflow-x:auto;padding:8px 40px 8px 10px;background:#fff;scrollbar-width:none}
+  .thumb{flex:none;width:52px;height:52px;border-radius:3px;border:1px solid #e6e6e6;font-size:8.5px;font-weight:600;line-height:1.15;display:flex;align-items:flex-end;padding:4px;color:#444;background:linear-gradient(160deg,#f7efe9,#fff)}
+  .thumb.sel{border:2px solid var(--accent)}
+  .pname{font-size:14px;line-height:1.4;font-weight:500;color:#222;padding-right:34px}
+  .mall{display:inline-block;background:#D0011B;color:#fff;font-size:9px;font-weight:800;padding:1px 4px;border-radius:2px;margin-right:4px;vertical-align:2px}
+  .price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;padding-right:34px}
+  .price .now{color:var(--accent);font-size:22px;font-weight:700}
+  .price .old{color:#999;text-decoration:line-through;font-size:12px}
+  .price .off{background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:700;padding:1px 4px;border-radius:2px}
+  .meta{display:flex;gap:10px;color:#777;font-size:11px;margin-top:6px}
+  .fs{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,#FE2C55,#FF6B81);color:#fff;padding:6px 10px;border-radius:4px;font-weight:800;font-size:12px;font-style:italic;margin-right:34px}
+  .fs span{font-style:normal;font-weight:600;font-size:11px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .chip{border:1px solid var(--accent);color:var(--accent);background:var(--accent-soft);font-size:10.5px;font-weight:600;padding:2px 6px;border-radius:2px}
+  .chip.g{border-color:#14B8B0;color:#0E7F7A;background:#E6FBFA}
+  .rowlbl{color:#777;font-size:11px;margin:8px 0 4px}
+  .vars{display:flex;gap:6px}
+  .vars span{border:1px solid #ddd;padding:4px 10px;font-size:11px;border-radius:2px}
+  .vars span:first-child{border-color:var(--accent);color:var(--accent)}
+  .desc h4{margin:0 0 6px;font-size:13px}
+  .desc p{margin:0 0 6px;font-size:12px;color:#333;line-height:1.5}
+  .desc .sec{font-weight:700;font-size:11px;letter-spacing:.02em;color:#222;margin-top:6px}
+  .tags{color:#05A;font-size:11.5px}
+  .more{color:var(--accent);font-size:12px;text-align:center;margin-top:6px}
+  .buybar{position:sticky;bottom:0;display:flex;height:48px;background:#fff;border-top:1px solid #eee;z-index:6}
+  .buybar div{flex:1;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
+  .buybar .s{flex:.55;color:#161823;font-weight:600;font-size:10px}.buybar .a{background:#F1F1F2;color:#161823}.buybar .b{background:var(--accent);color:#fff}
+  /* shop mock */
+  .cover{position:relative;color:#fff;padding:14px 12px 12px}
+  .cover .bannerbg{position:absolute;inset:0;z-index:0}
+  .cover>*:not(.bannerbg){position:relative;z-index:1}
+  .shoprow{display:flex;gap:10px;align-items:center;padding-right:34px}
+  .avatar{width:52px;height:52px;border-radius:50%;border:2px solid #fff;background:#fff;display:flex;align-items:center;justify-content:center;flex:none;overflow:hidden}
+  .sname{font-weight:700;font-size:14px}
+  .sname small{display:block;font-weight:500;font-size:10.5px;opacity:.9}
+  .follow{margin-left:auto;border:1px solid #fff;border-radius:3px;padding:3px 8px;font-size:11px;font-weight:700}
+  .sstats{display:flex;gap:14px;font-size:10.5px;margin-top:10px;opacity:.95}
+  .stabs{display:flex;background:#fff;border-bottom:1px solid #eee}
+  .stabs div{flex:1;text-align:center;padding:9px 0;font-size:12px;color:#555}
+  .stabs div.on{color:var(--accent);border-bottom:2px solid var(--accent);font-weight:600}
+  .promo{border-radius:6px;padding:14px;color:#fff;margin-right:28px}
+  .promo b{display:block;font-size:16px;font-weight:800;letter-spacing:-.01em}
+  .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px;padding-right:30px}
+  .cats div{background:#FBF7F4;border:1px solid #eee;border-radius:4px;padding:8px 6px;font-size:10.5px;font-weight:600;text-align:center}
+  .shipline{display:flex;gap:8px;align-items:flex-start;font-size:12px;padding-right:34px}
+  .lock{border:1.5px dashed #c9bdb8;border-radius:6px;padding:10px;color:#776;font-size:12px;background:#fbfaf9;margin-right:30px}
+  .lock b{color:#444}
+  /* panel */
+  .panel{min-width:0}
+  .pcard{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .ph{display:flex;gap:14px;align-items:flex-start;margin-bottom:6px}
+  .num{flex:none;width:40px;height:40px;border-radius:12px;background:var(--accent);color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center}
+  .ph h2{margin:0;font-size:22px;font-weight:800;letter-spacing:-.01em;line-height:1.2;text-wrap:balance}
+  .ph p{margin:4px 0 0;color:var(--muted);font-size:14px}
+  .pills{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 4px}
+  .pill{font-size:11px;font-weight:700;letter-spacing:.04em;padding:3px 8px;border-radius:6px;background:var(--surface-2);color:var(--muted)}
+  .pill.p1{background:var(--tip-soft);color:var(--tip)} .pill.p2{background:var(--gold-soft);color:var(--gold)}
+  .grp{margin-top:18px}
+  .gh{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+  .gh i{font-style:normal;width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px}
+  .grp.rule .gh{color:var(--rule)} .grp.rule .gh i{background:var(--rule-soft)}
+  .grp.tip .gh{color:var(--tip)} .grp.tip .gh i{background:var(--tip-soft)}
+  .items{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+  .items li{padding:10px 12px;border-radius:10px;font-size:14.5px;line-height:1.5}
+  .grp.rule li{background:var(--rule-soft)} .grp.tip li{background:var(--tip-soft)}
+  .items .note{display:block;font-size:12.5px;color:var(--muted);margin-top:3px}
+  .tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:1px 6px;border-radius:4px;margin-left:6px;vertical-align:2px;background:var(--accent);color:#fff}
+  .tag.fix{background:var(--ex)} .tag.flex{background:var(--gold)}
+  .ex{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:18px}
+  .ex div{border-radius:12px;padding:12px 14px;font-size:14px}
+  .ex .b{background:var(--rule-soft);border:1px solid #F5C9C3}
+  .ex .g{background:var(--tip-soft);border:1px solid #BFE3CF}
+  .ex small{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+  .ex .b small{color:var(--rule)} .ex .g small{color:var(--tip)}
+  .widget{margin-top:18px;border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:16px}
+  .widget h3{margin:0 0 4px;font-size:15px;font-weight:800}
+  .widget .hint{margin:0 0 12px;color:var(--muted);font-size:13px}
+  .navrow{display:flex;justify-content:space-between;gap:10px;margin-top:20px;flex-wrap:wrap}
+  .btn{border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:9px 14px;font-weight:600;font-size:13px;cursor:pointer}
+  .btn:hover{border-color:var(--accent);color:var(--accent-ink)}
+  .btn.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn.pri:hover{background:var(--accent-ink);color:#fff}
+  .list{display:grid;gap:8px;margin-top:14px}
+  .li{display:flex;gap:12px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--bg);cursor:pointer;text-align:left;width:100%}
+  .li:hover{border-color:var(--accent)}
+  .li .n{flex:none;width:28px;height:28px;border-radius:8px;background:var(--accent-soft);color:var(--accent-ink);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px}
+  .li .t{flex:1;min-width:0}
+  .li .t b{display:block;font-size:14px}
+  .li .t span{font-size:12.5px;color:var(--muted)}
+  .li .c{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .bar{height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden;margin-top:6px}
+  .bar i{display:block;height:100%;background:var(--tip);border-radius:3px}
+  .legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:14px;font-size:13px;color:var(--muted)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+  /* forms */
+  .field{display:grid;gap:4px;font-size:12.5px;font-weight:600;color:var(--muted)}
+  .field input,.field textarea{border:1px solid var(--line);border-radius:8px;padding:9px 10px;font-size:14px;font-weight:500;background:var(--bg);width:100%;min-width:0}
+  .field input:focus,.field textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+  .checks{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:5px;font-size:13.5px}
+  .checks li{display:flex;gap:8px;align-items:flex-start}
+  .checks .ok{color:var(--tip)} .checks .no{color:var(--rule)} .checks .warn{color:var(--gold)}
+  .checks b{flex:none;width:18px;text-align:center}
+  .preview{margin-top:10px;font-size:13px;background:var(--bg);border:1px dashed var(--line);padding:8px 10px;border-radius:8px}
+  .preview mark{background:var(--accent-soft);color:var(--accent-ink);padding:0 2px}
+  .wf{display:grid;gap:5px;margin-top:12px}
+  .wf .r{display:grid;grid-template-columns:120px minmax(0,1fr) 92px;gap:8px;align-items:center;font-size:12.5px}
+  .wf .r .tr{height:16px;background:var(--surface-2);border-radius:4px;overflow:hidden}
+  .wf .r .tr i{display:block;height:100%;border-radius:4px}
+  .wf .v{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+  .verdict{margin-top:12px;padding:10px 12px;border-radius:10px;font-weight:700;font-size:14px}
+  .verdict.good{background:var(--tip-soft);color:var(--tip)} .verdict.bad{background:var(--rule-soft);color:var(--rule)}
+  .formula{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px;font-weight:600}
+  .formula span{padding:6px 10px;border-radius:8px}
+  .formula em{font-style:normal;color:var(--muted)}
+  .diag svg{width:100%;max-width:330px;height:auto;display:block}
+  .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;max-width:330px}
+  .slots div{aspect-ratio:1;border-radius:8px;background:var(--bg);border:1px solid var(--line);font-size:11.5px;font-weight:600;padding:6px;display:flex;flex-direction:column;justify-content:space-between}
+  .slots div i{font-style:normal;font-size:10px;color:var(--muted);font-weight:700}
+  .slots div.main{background:var(--accent-soft);border-color:var(--accent)}
+  .stack{display:grid;gap:4px;max-width:360px}
+  .stack div{padding:8px 12px;border-radius:8px;font-size:13px;font-weight:600;background:var(--bg);border:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}
+  .stack div i{font-style:normal;color:var(--muted);font-weight:500;font-size:12px}
+  .stack .hl{background:var(--accent-soft);border-color:var(--accent)}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}
+  .flow .st{flex:1 1 180px;border-radius:12px;padding:12px;font-size:13px}
+  .flow .st b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+  .flow .arrow{align-self:center;color:var(--muted);font-weight:800}
+  .sheetclose{display:none}
+  .backdrop{display:none}
+  @media(max-width:899px){
+    .screen{height:68vh;min-height:480px}
+    body.sheet .panel{position:fixed;left:0;right:0;bottom:0;z-index:60;max-height:80vh;overflow-y:auto;padding:0 0 env(safe-area-inset-bottom,0px)}
+    body.sheet .panel .pcard{border-radius:20px 20px 0 0;border-bottom:0;box-shadow:0 -10px 30px rgba(0,0,0,.18)}
+    body.sheet .sheetclose{display:flex;position:sticky;top:0;justify-content:center;padding:8px 0 0;background:var(--bg);border-radius:20px 20px 0 0}
+    body.sheet .backdrop{display:block;position:fixed;inset:0;background:rgba(20,12,14,.35);z-index:55}
+    .wf .r{grid-template-columns:96px minmax(0,1fr) 84px}
+  }
+  .src{margin:0;padding-left:18px;display:grid;gap:3px}.src a{color:var(--ex)}
+  .diff{margin-top:18px;border-radius:12px;padding:12px 14px;background:var(--ex-soft);border:1px solid #C9D7F0;font-size:14px}.diff small{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ex);margin-bottom:4px}
+  .counter{position:absolute;right:10px;bottom:10px;background:rgba(22,24,35,.55);color:#fff;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:10px}
+  .attrs{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:11.5px;padding-right:30px}.attrs span{color:#888}.attrs b{font-weight:600}
+  .follow.ttf{background:#FE2C55;border-color:#FE2C55;color:#fff;padding:5px 12px}
+  .tbanner{margin-top:10px;border-radius:6px;padding:12px;background:linear-gradient(110deg,#161823 60%,#25F4EE);color:#fff;margin-right:28px}.tbanner b{display:block;font-size:15px;letter-spacing:.08em}.tbanner span{font-size:11px;opacity:.9}
+  .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:6px;padding-right:30px}.vgrid div{aspect-ratio:9/16;border-radius:5px;background:linear-gradient(180deg,#3a3d4a,#161823);color:#fff;padding:6px;display:flex;flex-direction:column;justify-content:space-between;font-size:10px}.vgrid .vcart{align-self:flex-start;background:#FACE15;color:#161823;font-weight:700;border-radius:3px;padding:1px 4px;font-size:8.5px}.vgrid .vt{font-weight:700;line-height:1.2}.vgrid .vv{opacity:.85}
+  .field select{border:1px solid var(--line);border-radius:8px;padding:9px 10px;font-size:14px;font-weight:500;background:var(--bg);width:100%;min-width:0}
+  .foot{margin-top:36px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:14px}
+  </style>
+</head>
+<body>
+<div class="app" id="app">
+  <header class="top">
+    <div class="brand">
+      <div class="eyebrow">Digital Lab · Checklist tối ưu TikTok Shop</div>
+      <h1>Soi Trang TikTok Shop</h1>
+      <p class="sub">Mở trang sản phẩm và trang shop quen thuộc ra xem từng chỗ cần tối ưu gì. Chạm vào chấm hồng để ôn lại quy định của sàn, cách tối ưu, ví dụ, và chỗ khác với Shopee.</p>
+    </div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Màn hình">
+        <button id="sc-product" data-screen="product">Trang sản phẩm</button>
+        <button id="sc-shop" data-screen="shop">Trang shop</button>
+      </div>
+    </div>
+  </header>
+  <div class="modebar" id="modebar"></div>
+  <main class="main">
+    <div class="phonewrap"><div class="phone"><div class="screen" id="screen"></div></div></div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </main>
+  <div class="backdrop" id="backdrop"></div>
+  <div class="foot"><p style="margin:0 0 8px">Nội dung lấy từ "Checklist tối ưu TikTok Shop" của Digital Lab. Thương hiệu "Lumi" trong mô phỏng là thương hiệu giả định dùng để minh họa. Quy định của sàn có thể thay đổi; đối chiếu lại với Seller University và Seller Center trước mỗi khóa học.</p>
+  <p style="margin:0 0 4px;font-weight:700;color:var(--ink)">Nguồn</p>
+  <ul class="src">
+   <li><a href="https://seller-vn.tiktok.com/product/create" target="_blank" rel="noopener">TikTok Seller Center: trang Thêm sản phẩm</a> (kiểm tra 25/09/2026)</li>
+   <li><a href="https://seller-vn.tiktok.com/university/essay?knowledge_id=5918681919178512" target="_blank" rel="noopener">Seller University: Tiêu đề, mô tả, hình ảnh và video</a></li>
+   <li><a href="https://seller-vn.tiktok.com/university/essay?knowledge_id=6837791128454914" target="_blank" rel="noopener">Seller University: Hướng dẫn đăng bán sản phẩm</a></li>
+   <li><a href="https://seller-vn.tiktok.com/university/essay?knowledge_id=6837773789480706" target="_blank" rel="noopener">Seller University: Chính sách nội dung</a></li>
+   <li><a href="https://www.bigseller.com/blog/articleDetails/tip-dang-san-pham-tiktok-duyet-nhanh.2348.htm" target="_blank" rel="noopener">BigSeller</a> · <a href="https://admatrix.vn/ma-uu-dai-voucher-tiktok-shop-nha-ban-hang-can-biet/" target="_blank" rel="noopener">Admatrix</a> (nguồn tham khảo)</li>
+  </ul></div>
+</div>
+
+<script>
+/* ============ DỮ LIỆU — sửa nội dung tại đây ============ */
+const DATA = {
+product:{ label:'Trang sản phẩm', hotspots:[
+ {id:'anh-chinh', name:'Ảnh chính', short:'Ảnh đầu tiên khách thấy khi lướt. TikTok muốn ảnh này sạch và thật.', phase:1,
+  groups:[
+   {k:'rule', t:'Quy định sàn', items:[
+    {x:'Nền màu đồng nhất, sản phẩm chiếm tối thiểu 60% khung hình, hiển thị trọn vẹn, là mặt trước thực tế'},
+    {x:'Ảnh vuông 1:1, độ phân giải tối thiểu 600×600 px', n:'Công cụ tải lên vẫn nhận ảnh từ 300×300 px, nhưng tài liệu quy định 600×600 px'},
+    {x:'Định dạng JPEG hoặc PNG', n:'Tài liệu không quy định dung lượng ảnh'},
+    {x:'Ảnh màu, rõ nét; không mờ, vỡ điểm ảnh hay che khuất sản phẩm'},
+    {x:'Chữ trên ảnh (nếu có) phải bằng tiếng Việt'},
+    {x:'Không chèn thông tin liên hệ, link hay tên/logo sàn khác lên ảnh', n:'Thuộc nhóm điều hướng khách ra ngoài nền tảng'}]},
+   {k:'tip', t:'Tối ưu hiển thị', items:[
+    {x:'Ảnh chính nên có nền trắng; không chứa chữ, logo, đường viền, khối màu, hình mờ (watermark) hay yếu tố đồ họa khác'}]}],
+  diff:'Shopee thường chèn logo, thông tin bảo hành lên ảnh đại diện và yêu cầu sản phẩm chiếm 70% khung. TikTok yêu cầu nền đồng nhất, sản phẩm từ 60% khung, và khuyến nghị ảnh chính thật sạch: không chữ, không logo.',
+  widget:'frame',
+  ex:{bad:'Thùng sơn đặt trên nền công trình, góc ảnh có logo shop và khung viền đỏ "Giảm 15%".', good:'Mặt trước thùng sơn trên nền trắng, chiếm khoảng 75% khung, không chữ hay logo nào thêm vào.'}},
+ {id:'video', name:'Video sản phẩm', short:'Mỗi sản phẩm được gắn 1 video. Đây là chỗ khách xem sản phẩm "chạy" thật.', phase:1,
+  groups:[
+   {k:'rule', t:'Quy định sàn', items:[
+    {x:'Tối đa 1 video cho mỗi sản phẩm'},
+    {x:'Dung lượng video tối đa 5MB', n:'Một số nguồn bên thứ ba ghi 100MB; checklist theo tài liệu chính thức'},
+    {x:'Nội dung nguyên bản, đúng sản phẩm đăng bán'}]},
+   {k:'tip', t:'Tối ưu', items:[
+    {x:'Tập trung 1-2 điểm bán hàng chính'},
+    {x:'Ưu tiên video dọc 9:16 vì phù hợp cách khách xem trên TikTok'}]}],
+  diff:'Shopee cho video tới 30MB, dài 10-60 giây. TikTok giới hạn 1 video, tối đa 5MB, nên video phải ngắn và gọn.',
+  widget:'video',
+  ex:{bad:'Cắt lại video quảng cáo của hãng khác, nói về 6 tính năng trong 1 phút, quay ngang.', good:'Video dọc tự quay, 15 giây, chỉ nói 2 điểm: lau sạch vết bút màu và ít mùi.'}},
+ {id:'anh-phu', name:'Ảnh phụ', short:'Các ảnh phía sau ảnh chính, để khách xem kỹ mọi góc và tin sản phẩm.', phase:1,
+  groups:[
+   {k:'rule', t:'Quy định sàn', items:[
+    {x:'Tối đa 9 ảnh'},
+    {x:'Cùng thông số: vuông 1:1, tối thiểu 600×600 px, JPEG/PNG, rõ nét, chữ trên ảnh bằng tiếng Việt'},
+    {x:'Không chèn thông tin liên hệ, link hay tên/logo sàn khác lên ảnh'}]},
+   {k:'tip', t:'Tối ưu hiển thị', items:[
+    {x:'Thể hiện mặt bên, mặt sau, chi tiết, phụ kiện đi kèm'},
+    {x:'Có thể thêm hướng dẫn sử dụng, chứng nhận, bảng size, bối cảnh sử dụng'}]}],
+  widget:'slots',
+  ex:{bad:'9 ảnh đều là cùng một thùng sơn, chỉ đổi góc chụp một chút.', good:'Mặt trước, mặt sau (nhãn thành phần), màng sơn cận cảnh, phụ kiện, phòng đã sơn, hướng dẫn, chứng nhận.'}},
+ {id:'gia-ban', name:'Giá bán (chiết khấu)', short:'Giá gạch ngang và giá sau giảm đến từ cài đặt "Chiết khấu sản phẩm".', phase:1,
+  groups:[
+   {k:'tip', t:'Cài đặt (Giai đoạn 1)', items:[
+    {x:'Chiết khấu sản phẩm: giảm giá theo % hoặc theo số tiền'},
+    {x:'Kiểm tra biên lợi nhuận khi các chương trình cộng dồn', n:'Chiết khấu, voucher, combo, freeship và hoa hồng affiliate có thể chồng lên nhau. Tính giá thực nhận sau toàn bộ ưu đãi, phí sàn và hoa hồng.'}]},
+   {k:'rule', t:'Quy định sàn', items:[
+    {x:'Không dùng giá ảo, khuyến mãi sai sự thật', n:'Thuộc nhóm thông tin sai lệch bị cấm'}]}],
+  diff:'Trên TikTok, khi tính lãi phải trừ thêm hoa hồng affiliate (KOC), vì phần lớn đơn đến từ video của người khác.',
+  widget:'calc',
+  ex:{bad:'Nâng giá gốc lên 2.000.000đ rồi "giảm 40%" còn 1.200.000đ.', good:'Giá gốc là giá bán thật, chiết khấu 15%, đã tính cả hoa hồng KOC mà vẫn còn lãi.'}},
+ {id:'ten-sp', name:'Tên sản phẩm', short:'Khách tìm bằng chữ, thuật toán đọc chữ. Tên phải khớp với ảnh, video và mô tả.', phase:1,
+  groups:[
+   {k:'rule', t:'Quy định sàn', items:[
+    {x:'Tiêu đề hoàn chỉnh, chính xác, cô đọng; nhất quán với hình ảnh, video và mô tả'},
+    {x:'Chỉ dùng tên thương hiệu khi là chủ sở hữu hoặc được ủy quyền'},
+    {x:'Không chứa thông tin khuyến mãi (VD: "Giảm giá x%"), URL, tên người bán'},
+    {x:'Không nhắc đến TikTok hay nền tảng khác'},
+    {x:'Không dùng ký tự đặc biệt'},
+    {x:'Độ dài tối đa 255 ký tự', n:'Ô Tên sản phẩm trên Seller Center có bộ đếm 0/255'}]},
+   {k:'tip', t:'Công thức đặt tên', items:[
+    {x:'Tên = Thương hiệu + Loại sản phẩm + Chất liệu/Thành phần + Tính năng chính + Quy cách (số lượng/dung tích)', n:'Các thành phần này do TikTok liệt kê là thông tin nên có trong tiêu đề'},
+    {x:'Nên dài từ 40 ký tự trở lên để đủ từ khóa'}]},
+   {k:'tip', t:'Tối ưu tìm kiếm', items:[
+    {x:'Đưa từ khóa chính lên đầu tiêu đề', n:'Tiêu đề dài bị cắt khi hiển thị trên điện thoại'},
+    {x:'Không nhồi nhét từ khóa; thử từ khóa ngách (từ khóa dài, mở rộng)', n:'Ví dụ: Kem trị mụn → Kem trị mụn cho da nhờn'},
+    {x:'Tránh đặt tên y hệt sản phẩm đối thủ'}]}],
+  diff:'Shopee giới hạn 120 ký tự, TikTok cho tới 255 ký tự và khuyến nghị tối thiểu 40 ký tự. Công thức của TikTok đặt Thương hiệu lên đầu, có thêm Chất liệu/Thành phần và Quy cách.',
+  widget:'name',
+  ex:{bad:'Sơn giảm giá 20% hot trend TikTok ✨ shop Minh Anh', good:'Lumi Sơn nội thất Acrylic gốc nước lau chùi được, ít mùi, màu trắng sứ, thùng 18L'}},
+ {id:'chuong-trinh', name:'Chương trình marketing', short:'Voucher, combo, mua sỉ, flash sale, quà tặng: lý do để khách chốt đơn ngay khi đang xem video.', phase:1,
+  groups:[
+   {k:'tip', t:'Cài đặt (Giai đoạn 1)', items:[
+    {x:'Voucher của shop', n:'Voucher chung, voucher LIVE, voucher cho nhóm khách cụ thể'},
+    {x:'Ưu đãi theo gói (combo)'},
+    {x:'Mua sỉ giá hời (mua nhiều giảm nhiều)'},
+    {x:'Ưu đãi chớp nhoáng (Flash Sale)'},
+    {x:'Quà tặng khi mua hàng'},
+    {x:'Chiết khấu phí vận chuyển'}]},
+   {k:'rule', t:'Quy định sàn', items:[
+    {x:'Không dùng giá ảo, khuyến mãi sai sự thật'}]}],
+  widget:'stackmkt',
+  ex:{bad:'Treo "Quà tặng trị giá 500K" nhưng quà là cây cọ 20K.', good:'Mua 2 thùng giảm 5%, tặng bộ lăn sơn ghi đúng giá trị, voucher LIVE chỉ dùng trong phiên live.'}},
+ {id:'mo-ta', name:'Mô tả & thuộc tính', short:'Thuộc tính giúp sàn xếp đúng danh mục, mô tả giúp khách hiểu và tin.', phase:1,
+  groups:[
+   {k:'rule', t:'Quy định sàn', items:[
+    {x:'Mô tả không dưới 30 từ'},
+    {x:'Nêu đặc điểm chính, thành phần, chức năng; liệt kê rõ phụ kiện đi kèm'},
+    {x:'Cung cấp thông tin an toàn và cảnh báo', n:'Đặc biệt với thực phẩm bổ sung'},
+    {x:'Không tuyên bố sai lệch, phóng đại, công dụng chưa kiểm chứng'},
+    {x:'Không đưa số điện thoại, link hay tên sàn khác vào mô tả', n:'Thuộc nhóm điều hướng khách ra ngoài nền tảng'},
+    {x:'Điền đủ thuộc tính bắt buộc theo ngành hàng; chọn đúng danh mục'}]},
+   {k:'tip', t:'Tối ưu nội dung', items:[
+    {x:'Mô tả từ 500 ký tự trở lên, gồm 3-5 điểm bán hàng'},
+    {x:'Chia đoạn ngắn: Giới thiệu, Ưu điểm nổi bật, Thông số kỹ thuật, Hướng dẫn sử dụng'},
+    {x:'Lặp lại từ khóa chính 2-3 lần, kết hợp từ khóa mở rộng'},
+    {x:'Mô tả bối cảnh sử dụng: dành cho ai, dùng khi nào', n:'Ví dụ: shop nước mắm nên mô tả thêm dùng để chế biến món gì'}]}],
+  diff:'Shopee khuyến nghị 2.000-3.000 ký tự và cho tới 18 hashtag. TikTok chỉ cần từ 500 ký tự, nhưng bắt buộc có thông tin an toàn, cảnh báo và đủ thuộc tính theo ngành hàng.',
+  widget:'desc',
+  ex:{bad:'"Sơn số 1 Việt Nam, bền 100 năm, diệt sạch 100% vi khuẩn." Thuộc tính để trống.', good:'Đủ thuộc tính (dung tích, gốc sơn, bề mặt), 4 đoạn ngắn, 4 điểm bán, có lưu ý an toàn khi thi công.'}}
+]},
+shop:{ label:'Trang shop', hotspots:[
+ {id:'s-nhan-dien', name:'Nhận diện thương hiệu', short:'Ảnh đại diện, tên shop, banner: nhìn là biết shop của ai.', phase:1,
+  groups:[
+   {k:'rule', t:'Quy định sàn', items:[{x:'Không dùng thương hiệu, logo, hình ảnh của người khác khi chưa được phép', n:'Vi phạm sở hữu trí tuệ'}]},
+   {k:'tip', t:'Khuyến nghị tối ưu', items:[{x:'Ảnh đại diện, tên shop, banner trang shop đúng brand guideline'}]}],
+  widget:'brand',
+  ex:{bad:'Lấy logo và ảnh quảng cáo của hãng sơn lớn làm banner dù không phải đại lý ủy quyền.', good:'Logo, màu, font lấy từ brand guideline của chính thương hiệu.'}},
+ {id:'s-gioi-thieu', name:'Giới thiệu & tính cách', short:'Đoạn khách đọc để biết shop là ai. Giọng văn phải khớp với video và LIVE.', phase:1,
+  groups:[
+   {k:'rule', t:'Quy định sàn', items:[{x:'Không chèn thông tin liên hệ, link hay điều hướng khách ra ngoài nền tảng'}]},
+   {k:'tip', t:'Khuyến nghị tối ưu', items:[
+    {x:'Theo đúng nội dung giới thiệu thương hiệu'},
+    {x:'Bám theo tính cách thương hiệu', n:'Đọc lại Bản mô tả thương hiệu; giọng văn mô tả, video, LIVE thống nhất'}]}],
+  ex:{bad:'"Ib Zalo 0909… để có giá sỉ, follow page FB để săn deal!"', good:'"Lumi Paint, sơn nội thất gốc nước cho căn hộ gia đình Việt. Ít mùi, lau chùi được, tư vấn phối màu qua chat."'}},
+ {id:'s-chuong-trinh', name:'Chương trình đang chạy', short:'Banner và voucher trên trang shop phải khớp với chiến dịch thương hiệu đang làm.', phase:1,
+  groups:[{k:'tip', t:'Khuyến nghị tối ưu', items:[
+   {x:'Thể hiện các chương trình marketing thương hiệu đang triển khai', n:'Kiểm tra kho tài nguyên, trao đổi với team leader'}]}],
+  ex:{bad:'Banner "Sale 9.9" vẫn treo dù đã sang tháng 10.', good:'Banner theo chiến dịch hiện tại, voucher trên shop trùng với chương trình đang chạy.'}},
+ {id:'s-video', name:'Video gắn giỏ hàng', short:'Đặc thù TikTok Shop: khách mua qua nội dung. Shop không có video thì rất khó có đơn.', phase:1,
+  groups:[
+   {k:'rule', t:'Quy định sàn', items:[
+    {x:'Nội dung video/LIVE phải nguyên bản, liên quan đúng sản phẩm gắn giỏ', n:'Cấm nội dung không nguyên bản, quảng cáo sản phẩm khác sản phẩm gắn giỏ'},
+    {x:'Không tạo tương tác, đơn hàng, đánh giá ảo'}]},
+   {k:'tip', t:'Khuyến nghị tối ưu', items:[
+    {x:'Video ngắn gắn giỏ hàng cho sản phẩm chủ lực', n:'TikTok Shop bán qua nội dung; shop không có video thì rất khó có đơn'}]}],
+  widget:'contentflow',
+  ex:{bad:'Đăng lại video viral của người khác, gắn giỏ sản phẩm sơn không liên quan; mua view cho đẹp.', good:'Mỗi sản phẩm chủ lực có vài video tự quay, cảnh lăn sơn thật, gắn đúng giỏ hàng của sản phẩm đó.'}},
+ {id:'s-danh-muc', name:'Bộ sưu tập sản phẩm', short:'Giúp khách tự đi tìm đúng loại sơn mình cần.', phase:1,
+  groups:[{k:'tip', t:'Khuyến nghị tối ưu', items:[
+   {x:'Xây dựng danh mục sản phẩm (bộ sưu tập) trên trang shop'},
+   {x:'Tối ưu thông tin từng sản phẩm', n:'Xem màn hình "Trang sản phẩm"'}]}],
+  widget:'toProduct',
+  ex:{bad:'Tất cả 48 sản phẩm nằm lẫn lộn, không có bộ sưu tập nào.', good:'Bộ sưu tập: Sơn nội thất, Sơn ngoại thất, Chống thấm, Combo tiết kiệm, Dụng cụ.'}},
+ {id:'s-van-chuyen', name:'Cài đặt vận chuyển', short:'Lấy hàng ở đâu, trả hàng về đâu, gói nặng bao nhiêu. Sai là lệch phí ship.', phase:1,
+  groups:[{k:'rule', t:'Quy định sàn', items:[
+   {x:'Địa chỉ kho lấy hàng, địa chỉ trả hàng'},
+   {x:'Đơn vị vận chuyển, hình thức vận chuyển'},
+   {x:'Cân nặng và kích thước gói hàng của từng sản phẩm', n:'Nhập sai sẽ lệch phí vận chuyển'}]}],
+  widget:'parcel',
+  ex:{bad:'Thùng sơn 18L khai cân nặng 1 kg cho phí ship thấp.', good:'Khai đúng cân nặng thực tế cả bao bì và kích thước thùng.'}},
+ {id:'s-gd2', name:'Giai đoạn 2: LIVE, Affiliate, Ads', short:'Kéo traffic khi shop, sản phẩm và video đã ổn.', phase:2,
+  groups:[{k:'tip', t:'Khuyến nghị tối ưu · Giai đoạn 2', items:[
+   {x:'Livestream bán hàng (LIVE)'},
+   {x:'Tiếp thị liên kết (Affiliate/KOC)', n:'Nhớ cộng hoa hồng vào tính biên lợi nhuận'},
+   {x:'Quảng cáo TikTok Shop', n:'Triển khai sau khi shop, sản phẩm và video đã ổn'}]}],
+  widget:'phase',
+  ex:{bad:'Shop chưa có video nào đã đổ tiền quảng cáo và mời KOC.', good:'Hoàn tất giai đoạn 1, có video chủ lực ổn rồi mới LIVE, mời KOC và chạy quảng cáo.'}}
+]}};
+
+/* ============ TRẠNG THÁI ============ */
+const ST = {screen:'product', active:null};
+const KEY='soi-tiktok-v1';
+try{const s=JSON.parse(localStorage.getItem(KEY)||'{}'); if(s.screen) ST.screen=s.screen;}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({screen:ST.screen}))}catch(e){}}
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const hsList=()=>DATA[ST.screen].hotspots;
+const hsIndex=id=>hsList().findIndex(h=>h.id===id);
+const itemsOf=h=>h.groups.flatMap((g,gi)=>g.items.map((it,ii)=>({...it,k:g.k,key:h.id+':'+gi+':'+ii})));
+const fmt=n=>Math.round(n).toLocaleString('vi-VN')+'đ';
+
+/* ============ SVG MINH HỌA ============ */
+function bucketSVG(){
+  return `<svg viewBox="0 0 300 300" aria-label="Ảnh chính: thùng sơn Lumi trên nền trắng">
+   <defs><linearGradient id="bk" x1="0" x2="1"><stop offset="0" stop-color="#E6E6EA"/><stop offset=".5" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D6D6DC"/></linearGradient></defs>
+   <rect width="300" height="300" fill="#FFFFFF"/>
+   <ellipse cx="150" cy="276" rx="104" ry="8" fill="#EEEEF0"/>
+   <path d="M92 52 q58 -42 116 0" fill="none" stroke="#888" stroke-width="5"/>
+   <rect x="50" y="50" width="200" height="222" rx="10" fill="url(#bk)" stroke="#bbb"/>
+   <ellipse cx="150" cy="52" rx="100" ry="12" fill="#F2F2F4" stroke="#bbb"/>
+   <rect x="50" y="104" width="200" height="110" fill="#161823"/>
+   <rect x="50" y="198" width="200" height="16" fill="#25F4EE"/>
+   <text x="150" y="146" text-anchor="middle" font-size="28" font-weight="800" fill="#fff" font-family="Montserrat,Arial">LUMI L01</text>
+   <text x="150" y="170" text-anchor="middle" font-size="12" font-weight="600" fill="#fff" font-family="Montserrat,Arial">SƠN NỘI THẤT ACRYLIC</text>
+   <text x="150" y="189" text-anchor="middle" font-size="11" fill="#FE2C55" font-weight="700" font-family="Montserrat,Arial">Trắng sứ · 18L</text>
+  </svg>`;
+}
+const play=`<svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z" fill="#fff"/></svg>`;
+const icBack=`<svg class="ic" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke="#161823" stroke-width="2.4" fill="none"/></svg>`;
+const icShare=`<svg class="ic" viewBox="0 0 24 24"><path d="M14 5l7 6-7 6v-4c-5 0-8 2-10 5 1-6 4-10 10-10z" fill="#161823"/></svg>`;
+const icCart=`<svg class="ic" viewBox="0 0 24 24"><path d="M3 4h3l2 11h11l2-8H7" stroke="#161823" stroke-width="2" fill="none"/><circle cx="9" cy="19" r="1.6" fill="#161823"/><circle cx="18" cy="19" r="1.6" fill="#161823"/></svg>`;
+
+/* ============ MOCKUP — TRANG SẢN PHẨM ============ */
+function dot(id){
+  const i=hsIndex(id)+1; const h=hsList()[i-1];
+  return `<button class="dot" aria-label="Xem mục ${i}: ${esc(h.name)}">${i}</button>`;
+}
+function H(id,inner,extra=''){return `<div class="hs${ST.active===id?' on':''}" data-hs="${id}" ${extra}>${inner}${dot(id)}</div>`}
+const chrome=()=>`<div class="statusbar"><span>9:41</span><span>5G ▮▮▮</span></div><div class="appbar">${icBack}<div class="search">Tìm kiếm</div>${icShare}${icCart}</div>`;
+
+function goodProduct(){
+  const thumbs=['Mặt trước','Mặt sau · nhãn','Màng sơn cận cảnh','Phụ kiện kèm','Phòng đã sơn','Hướng dẫn thi công','Chứng nhận','Bảng màu'];
+  return `${chrome()}
+  <div class="card" style="padding:0;margin-top:0">
+    ${H('anh-chinh',`<div class="hero">${bucketSVG()}<span class="counter">1/9</span>
+       <div class="vbadge hs${ST.active==='video'?' on':''}" data-hs="video">${play} Video 0:15${dot('video')}</div></div>`)}
+    ${H('anh-phu',`<div class="thumbs">${thumbs.map((t,i)=>`<div class="thumb${i===0?' sel':''}">${t}</div>`).join('')}</div>`)}
+  </div>
+  <div class="card">
+    <div class="fs">⚡ Flash Sale <span>Kết thúc sau 02:14:33</span></div>
+    <div style="height:8px"></div>
+    ${H('gia-ban',`<div class="price"><span class="now">₫1.190.000</span><span class="off">-15%</span><span class="old">₫1.400.000</span></div>`)}
+    <div style="height:6px"></div>
+    ${H('ten-sp',`<div class="pname">Lumi Sơn nội thất Acrylic gốc nước lau chùi được, ít mùi, màu trắng sứ, thùng 18L</div>`)}
+    <div class="meta"><span>★ 4.9 (320)</span><span>Đã bán 1,2K</span></div>
+  </div>
+  <div class="card">
+    ${H('chuong-trinh',`<div class="rowlbl" style="margin-top:0">Ưu đãi</div>
+      <div class="chips"><span class="chip">Giảm ₫50K</span><span class="chip">Voucher LIVE -₫30K</span><span class="chip">Mua 2 giảm 5%</span><span class="chip">Mua sỉ giá hời</span><span class="chip">Quà: bộ lăn sơn</span><span class="chip g">Giảm ₫30K phí vận chuyển</span></div>`)}
+    <div class="rowlbl">Phân loại</div><div class="vars"><span>Thùng 18L</span><span>Thùng 5L</span><span>Lon 1L</span></div>
+  </div>
+  <div class="card desc">
+    ${H('mo-ta',`<h4>Thông số</h4>
+      <div class="attrs"><span>Thương hiệu</span><b>Lumi</b><span>Loại sơn</span><b>Nội thất, gốc nước</b><span>Dung tích</span><b>18L</b><span>Bề mặt</span><b>Tường trong nhà</b><span>Xuất xứ</span><b>Việt Nam</b></div>
+      <h4 style="margin-top:10px">Mô tả sản phẩm</h4>
+      <p><b>Lumi Sơn nội thất Acrylic gốc nước lau chùi được, thùng 18L</b></p>
+      <div class="sec">GIỚI THIỆU</div><p>Dành cho phòng khách, phòng ngủ, phòng trẻ em trong căn hộ gia đình…</p>
+      <div class="sec">ƯU ĐIỂM NỔI BẬT</div><p>• Lau sạch vết bút màu • Ít mùi • Độ phủ cao • Màng sơn mịn</p>
+      <div class="sec">THÔNG SỐ KỸ THUẬT</div><p>Thùng 18L · phủ 120-140 m²/2 lớp · khô bề mặt 30 phút</p>
+      <div class="sec">HƯỚNG DẪN SỬ DỤNG</div><p>1 lớp lót, 2 lớp phủ. Thi công nơi thoáng khí, để xa tầm tay trẻ em.</p>
+      <div class="more">Xem thêm ▾ <span style="color:#999">(≈ 850 ký tự)</span></div>`)}
+  </div>
+  <div class="buybar"><div class="s">Cửa hàng</div><div class="s">Chat</div><div class="a">Thêm vào giỏ hàng</div><div class="b">Mua ngay</div></div>`;
+}
+
+/* ============ MOCKUP — TRANG SHOP ============ */
+function goodShop(){
+  const vids=[['Lăn sơn 1 phút','12,3K'],['Lau vết bút màu','48K'],['Phối màu phòng ngủ','8,1K']];
+  return `<div class="statusbar"><span>9:41</span><span>5G ▮▮▮</span></div>
+  ${H('s-nhan-dien',`<div class="cover" style="color:#161823;background:#fff">
+     <div class="shoprow"><div class="avatar" style="border-color:#eee"><svg viewBox="0 0 52 52" width="52" height="52"><rect width="52" height="52" fill="#161823"/><text x="26" y="31" text-anchor="middle" font-size="12" font-weight="800" fill="#fff" font-family="Montserrat,Arial" letter-spacing="1">LUMI</text></svg></div>
+     <div class="sname">Lumi Paint Official<small style="color:#777">12,4K người theo dõi · 48 sản phẩm</small></div><div class="follow ttf">Theo dõi</div></div>
+     <div class="tbanner"><b>LUMI PAINT</b><span>Sơn nội thất gốc nước cho căn hộ Việt</span></div></div>`)}
+  <div class="stabs"><div class="on">Trang chủ</div><div>Sản phẩm</div><div>Video</div><div>Bộ sưu tập</div></div>
+  <div class="card">${H('s-gioi-thieu',`<div style="font-weight:700;margin-bottom:4px">Giới thiệu</div>
+     <p style="margin:0;padding-right:30px;color:#444;font-size:12px">Lumi Paint, sơn nội thất gốc nước cho căn hộ gia đình Việt. Ít mùi, lau chùi được, tư vấn phối màu qua chat.</p>`)}</div>
+  <div class="card">${H('s-chuong-trinh',`<div class="promo" style="background:linear-gradient(120deg,#FE2C55,#161823)"><small style="font-size:10px;font-weight:700;letter-spacing:.1em">CHIẾN DỊCH THÁNG 10</small><b>Nhà mới đón Tết sớm</b><span style="font-size:11px">Giảm đến 15% · Tặng bộ lăn sơn</span></div>
+     <div class="chips"><span class="chip">Giảm ₫50K</span><span class="chip">Voucher LIVE</span><span class="chip">Khách mới -₫30K</span></div>`)}</div>
+  <div class="card">${H('s-video',`<div style="font-weight:700">Video</div><div class="vgrid">${vids.map(v=>`<div><span class="vcart">🛒 Giỏ hàng</span><span class="vt">${v[0]}</span><span class="vv">▶ ${v[1]}</span></div>`).join('')}</div>`)}</div>
+  <div class="card">${H('s-danh-muc',`<div style="font-weight:700">Bộ sưu tập</div><div class="cats"><div>Sơn nội thất</div><div>Sơn ngoại thất</div><div>Chống thấm</div><div>Sơn lót</div><div>Combo tiết kiệm</div><div>Dụng cụ</div></div>`)}</div>
+  <div class="card">${H('s-van-chuyen',`<div class="shipline"><svg class="ic" viewBox="0 0 24 24"><path d="M2 6h12v9H2zM14 9h4l3 3v3h-7z" fill="none" stroke="#161823" stroke-width="1.8"/><circle cx="6" cy="17" r="2" fill="#161823"/><circle cx="17" cy="17" r="2" fill="#161823"/></svg>
+     <div><b>Lấy hàng: Kho Long Biên, Hà Nội</b><br><span style="color:#777">Trả hàng về: Kho Long Biên · Giao tiêu chuẩn, hỏa tốc<br>Thùng 18L: 24 kg · 32×32×38 cm</span></div></div>`)}</div>
+  <div class="card">${H('s-gd2',`<div class="lock"><b>🔒 Giai đoạn 2: LIVE · Affiliate/KOC · Quảng cáo</b><br>Mở khóa khi shop, sản phẩm và video đã ổn.</div>`)}</div>`;
+}
+
+/* ============ WIDGET TRONG PANEL ============ */
+function widget(w){
+  if(w==='frame') return `<div class="widget diag"><h3>Ảnh chính chuẩn TikTok</h3><p class="hint">Nền trắng hoặc đồng nhất, sản phẩm tối thiểu 60% khung, không thêm chữ, logo, viền hay watermark.</p>
+   <svg viewBox="0 0 240 240" role="img" aria-label="Sơ đồ ảnh chính 1:1">
+    <rect x="1" y="1" width="238" height="238" rx="6" fill="#fff" stroke="#E4E4E8" stroke-width="2"/>
+    <rect x="27" y="27" width="186" height="186" rx="6" fill="#E6F4EC" stroke="#137A4C" stroke-dasharray="5 4" stroke-width="1.5"/>
+    <text x="120" y="112" text-anchor="middle" font-size="15" font-weight="800" fill="#137A4C" font-family="Montserrat">Mặt trước sản phẩm</text>
+    <text x="120" y="131" text-anchor="middle" font-size="11" font-weight="600" fill="#137A4C" font-family="Montserrat">≥ 60% khung · hiển thị trọn vẹn</text>
+    <g font-family="Montserrat" font-size="8.5" font-weight="700" fill="#B42318">
+     <rect x="6" y="6" width="58" height="16" rx="3" fill="#FDEDEB"/><text x="35" y="17" text-anchor="middle">✕ Logo</text>
+     <rect x="176" y="6" width="58" height="16" rx="3" fill="#FDEDEB"/><text x="205" y="17" text-anchor="middle">✕ Chữ</text>
+     <rect x="6" y="218" width="58" height="16" rx="3" fill="#FDEDEB"/><text x="35" y="229" text-anchor="middle">✕ Viền</text>
+     <rect x="150" y="218" width="84" height="16" rx="3" fill="#FDEDEB"/><text x="192" y="229" text-anchor="middle">✕ Watermark</text>
+    </g>
+   </svg><p class="hint" style="margin:10px 0 0">1:1 · ≥ 600×600 px · JPEG/PNG · rõ nét</p></div>`;
+  if(w==='video') return `<div class="widget"><h3>Kiểm tra nhanh video</h3><p class="hint">Nhập thông số video của bạn.</p>
+   <div class="grid2"><label class="field">Số video gắn cho sản phẩm<input id="v-n" type="number" min="0" value="1"></label>
+   <label class="field">Dung lượng (MB)<input id="v-mb" type="number" min="0" step="0.1" value="4.2"></label>
+   <label class="field">Số điểm bán nói trong video<input id="v-usp" type="number" min="0" value="2"></label>
+   <label class="field">Khung hình<select id="v-ratio"><option value="916">Dọc 9:16</option><option value="11">Vuông 1:1</option><option value="169">Ngang 16:9</option></select></label></div>
+   <ul class="checks" id="v-out"></ul></div>`;
+  if(w==='slots'){const s=['Ảnh chính · nền trắng','Mặt bên','Mặt sau · nhãn thành phần','Chi tiết màng sơn','Phụ kiện đi kèm','Bối cảnh: phòng đã sơn','Hướng dẫn sử dụng','Chứng nhận','Bảng màu'];
+   return `<div class="widget"><h3>9 ô ảnh, xếp thế nào?</h3><p class="hint">Gợi ý thứ tự cho sản phẩm sơn (tham khảo): các góc của sản phẩm trước, rồi mới đến bối cảnh và giấy tờ.</p>
+   <div class="slots">${s.map((t,i)=>`<div class="${i===0?'main':''}"><i>ẢNH ${i+1}</i>${t}</div>`).join('')}</div></div>`;}
+  if(w==='name') return `<div class="widget"><h3>Máy soi tên sản phẩm</h3><p class="hint">Gõ thử tên sản phẩm. Máy sẽ soi các lỗi theo quy định của TikTok Shop.</p>
+   <div class="formula" style="margin-bottom:12px"><span style="background:#EAF0FA">Thương hiệu</span><em>+</em><span style="background:#FFEBEF">Loại SP</span><em>+</em><span style="background:#FFF6E0">Chất liệu/Thành phần</span><em>+</em><span style="background:#E6F4EC">Tính năng chính</span><em>+</em><span style="background:#F0EEF6">Quy cách</span></div>
+   <label class="field">Tên sản phẩm<textarea id="n-in" rows="3">Sơn giảm giá 20% hot trend TikTok ✨ shop Minh Anh</textarea></label>
+   <div class="preview" id="n-prev"></div><ul class="checks" id="n-out"></ul>
+   <p class="hint" style="margin:10px 0 0">Máy không kiểm tra được quyền dùng thương hiệu và tên người bán. Hai mục này học viên tự rà.</p>
+   <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><button class="btn" id="n-good">Thử tên chuẩn</button><button class="btn" id="n-bad">Thử tên lỗi</button></div></div>`;
+  if(w==='calc') return `<div class="widget"><h3>Máy tính giá thực nhận khi cộng dồn ưu đãi</h3><p class="hint">Số liệu mặc định là ví dụ. Nhập phí sàn và hoa hồng theo mức thực tế của shop.</p>
+   <div class="grid2">
+    <label class="field">Giá gốc (đ)<input id="c-list" type="number" value="1400000"></label>
+    <label class="field">Chiết khấu sản phẩm (%)<input id="c-km" type="number" value="15"></label>
+    <label class="field">Combo / Mua sỉ thêm (%)<input id="c-combo" type="number" value="5"></label>
+    <label class="field">Voucher shop (đ)<input id="c-vou" type="number" value="50000"></label>
+    <label class="field">Tổng phí sàn (%)<input id="c-fee" type="number" value="10"></label>
+    <label class="field">Hoa hồng affiliate (%)<input id="c-aff" type="number" value="10"></label>
+    <label class="field">Giá vốn (đ)<input id="c-cost" type="number" value="780000"></label></div>
+   <div class="wf" id="c-wf"></div><div id="c-verdict"></div></div>`;
+  if(w==='stackmkt') return `<div class="widget"><h3>Các lớp ưu đãi chồng lên nhau</h3><p class="hint">Khách thấy một mức giá, nhưng shop phải gánh từng lớp bên dưới.</p>
+   <div class="stack"><div>Giá gốc <i>giá bán thật, không nâng ảo</i></div><div>− Chiết khấu sản phẩm <i>% hoặc số tiền</i></div><div>− Combo / Mua sỉ giá hời</div><div>− Flash Sale</div><div>− Voucher shop / LIVE / nhóm khách</div><div>− Quà tặng · Chiết khấu phí vận chuyển</div><div>− Phí sàn · Hoa hồng affiliate <i>trừ khi đối soát</i></div><div class="hl">= Giá thực nhận <i>phải > giá vốn</i></div></div>
+   <div style="margin-top:12px"><button class="btn" data-go="gia-ban">Mở máy tính giá ở mục Giá bán →</button></div></div>`;
+  if(w==='desc') return `<div class="widget"><h3>Khung mô tả chuẩn</h3><p class="hint">Thuộc tính điền ở ô riêng; mô tả chia đoạn ngắn.</p>
+   <div class="stack" style="margin-bottom:14px"><div class="hl">Thuộc tính bắt buộc <i>đúng danh mục</i></div><div>1. Giới thiệu <i>dành cho ai, dùng khi nào</i></div><div>2. Ưu điểm nổi bật <i>3-5 điểm bán</i></div><div>3. Thông số kỹ thuật <i>thành phần, phụ kiện</i></div><div>4. Hướng dẫn sử dụng <i>kèm an toàn, cảnh báo</i></div></div>
+   <h3>Máy soi mô tả</h3><p class="hint">Dán mô tả của bạn vào đây.</p>
+   <label class="field">Nội dung mô tả<textarea id="d-in" rows="6">Lumi Sơn nội thất Acrylic gốc nước lau chùi được, thùng 18L
+GIỚI THIỆU: Dành cho phòng khách, phòng ngủ, phòng trẻ em.
+ƯU ĐIỂM NỔI BẬT: Lau sạch vết bút màu, ít mùi, độ phủ cao.
+THÔNG SỐ KỸ THUẬT: Thùng 18L, phủ 120-140 m2/2 lớp.
+HƯỚNG DẪN SỬ DỤNG: 1 lớp lót, 2 lớp phủ. Thi công nơi thoáng khí, để xa tầm tay trẻ em.</textarea></label><ul class="checks" id="d-out"></ul></div>`;
+  if(w==='brand') return `<div class="widget"><h3>Soi theo brand guideline</h3><p class="hint">Cầm brand guideline, đối chiếu từng thứ trên trang shop. Thứ gì không phải của mình thì phải có giấy ủy quyền.</p>
+   <div class="stack"><div>Ảnh đại diện <i>logo của thương hiệu</i></div><div>Tên shop <i>đúng tên thương hiệu</i></div><div>Banner <i>màu, font, phong cách ảnh</i></div><div class="hl">Logo, ảnh của hãng khác <i>chỉ khi được phép</i></div></div></div>`;
+  if(w==='contentflow') return `<div class="widget"><h3>Khách mua trên TikTok đi đường nào?</h3><p class="hint">Video là cửa vào chính, không phải ô tìm kiếm.</p>
+   <div class="flow"><div class="st" style="background:var(--accent-soft)"><b style="color:var(--accent-ink)">Lướt For You</b>Gặp video lăn sơn</div><div class="arrow">→</div><div class="st" style="background:var(--surface-2)"><b>Giỏ hàng</b>Bấm giỏ gắn trong video</div><div class="arrow">→</div><div class="st" style="background:var(--tip-soft)"><b style="color:var(--tip)">Trang sản phẩm</b>Xem ảnh, giá, ưu đãi rồi chốt</div></div>
+   <p class="hint" style="margin:10px 0 0">Vì vậy video phải nói đúng về sản phẩm được gắn giỏ. Nếu nói một đằng, gắn giỏ một nẻo thì vừa vi phạm vừa mất đơn.</p></div>`;
+  if(w==='parcel') return `<div class="widget"><h3>Khai cân nặng: thực tế cả bao bì</h3><p class="hint">Phí vận chuyển tính theo số khai báo. Khai thiếu thì đơn vị vận chuyển thu bù, khai thừa thì khách thấy phí ship cao.</p>
+   <div class="stack"><div>Cân nặng sản phẩm <i>VD: sơn 18L ≈ 23 kg</i></div><div>+ Bao bì, chèn lót</div><div class="hl">= Cân nặng gói hàng khai báo <i>kèm dài × rộng × cao</i></div></div></div>`;
+  if(w==='toProduct') return `<div class="widget"><h3>Bộ sưu tập xong, đến lượt từng sản phẩm</h3><p class="hint">Mỗi sản phẩm trong bộ sưu tập cần qua checklist ở màn hình Trang sản phẩm.</p><button class="btn pri" id="go-product">Mở Trang sản phẩm →</button></div>`;
+  if(w==='phase') return `<div class="widget"><h3>Thứ tự triển khai</h3><p class="hint">Kéo khách vào một shop chưa có video và trang sản phẩm chưa chuẩn thì tốn tiền mà không ra đơn.</p>
+   <div class="flow"><div class="st" style="background:var(--tip-soft)"><b style="color:var(--tip)">Giai đoạn 1 · Tối ưu</b>Trang shop · Trang sản phẩm · Chương trình marketing · Video gắn giỏ · Kiểm tra biên lợi nhuận</div><div class="arrow">→</div><div class="st" style="background:var(--gold-soft)"><b style="color:var(--gold)">Giai đoạn 2 · Kéo traffic</b>LIVE · Affiliate/KOC · Quảng cáo TikTok Shop</div></div></div>`;
+  return '';
+}
+/* ============ PANEL ============ */
+function itemsHTML(g){
+  return `<ul class="items">${g.items.map(it=>`<li>${esc(it.x)}${it.tag?`<span class="tag ${it.tag==='Đã sửa'?'fix':it.tag==='Linh hoạt'?'flex':''}">${it.tag}</span>`:''}${it.n?`<span class="note">${esc(it.n)}</span>`:''}</li>`).join('')}</ul>`;
+}
+function head(h){
+  const i=hsIndex(h.id)+1, c=itemsOf(h).length;
+  return `<div class="ph"><div class="num">${i}</div><div><h2>${esc(h.name)}</h2><p>${esc(h.short)}</p></div></div>
+   <div class="pills"><span class="pill ${h.phase===2?'p2':'p1'}">GIAI ĐOẠN ${h.phase}</span><span class="pill">${c} tiêu chí</span></div>`;
+}
+function navRow(h){
+  const L=hsList(), i=hsIndex(h.id);
+  return `<div class="navrow"><button class="btn" data-go="${L[(i-1+L.length)%L.length].id}">← ${esc(L[(i-1+L.length)%L.length].name)}</button><button class="btn pri" data-go="${L[(i+1)%L.length].id}">${esc(L[(i+1)%L.length].name)} →</button></div>`;
+}
+function panelExplore(){
+  const h=hsList().find(x=>x.id===ST.active);
+  if(!h){
+    const L=hsList();
+    return `<div class="pcard"><div class="eyebrow">${DATA[ST.screen].label} · ${L.length} điểm cần soi</div>
+     <h2 style="margin:6px 0 4px;font-size:22px;font-weight:800">Chạm vào chấm hồng trên điện thoại</h2>
+     <p style="margin:0;color:var(--muted)">Mỗi chấm là một vị trí trên trang. Bấm vào để xem quy định của sàn, cách tối ưu và ví dụ trước/sau.</p>
+     <div class="legend"><span><i class="sw" style="background:var(--rule)"></i>Quy định sàn: bắt buộc, vi phạm có thể bị từ chối duyệt hoặc phạt</span><span><i class="sw" style="background:var(--tip)"></i>Khuyến nghị tối ưu: không bắt buộc, giúp tăng hiển thị và chuyển đổi</span></div>
+     <div class="list">${L.map((x,i)=>`<button class="li" data-go="${x.id}"><span class="n">${i+1}</span><span class="t"><b>${esc(x.name)}</b><span>${esc(x.short)}</span></span><span class="c">${itemsOf(x).length} tiêu chí</span></button>`).join('')}</div></div>`;
+  }
+  return `<div class="sheetclose"><button class="btn" id="closeSheet">Đóng ✕</button></div><div class="pcard">${head(h)}
+   ${h.groups.map(g=>`<div class="grp ${g.k}"><div class="gh"><i>${g.k==='rule'?'!':'✓'}</i>${esc(g.t)}</div>${itemsHTML(g)}</div>`).join('')}
+   ${h.diff?`<div class="diff"><small>Khác Shopee ở đâu?</small>${esc(h.diff)}</div>`:''}
+   ${h.widget?widget(h.widget):''}
+   ${h.ex?`<div class="ex"><div class="b"><small>Chưa ổn</small>${esc(h.ex.bad)}</div><div class="g"><small>Nên làm</small>${esc(h.ex.good)}</div></div>`:''}
+   ${navRow(h)}</div>`;
+}
+/* ============ RENDER ============ */
+function render(keepScroll){
+  document.querySelectorAll('[data-screen]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.screen===ST.screen));
+  const tot=DATA[ST.screen].hotspots.reduce((a,h)=>a+itemsOf(h).length,0);
+  $('#modebar').innerHTML=`<span>Bấm chấm hồng trên điện thoại để xem cần tối ưu gì ở từng vị trí.</span><span class="stat">${DATA[ST.screen].hotspots.length} vị trí · ${tot} tiêu chí</span>`;
+  const sc=$('#screen'); const top=sc.scrollTop;
+  sc.innerHTML=ST.screen==='product'?goodProduct():goodShop();
+  if(keepScroll) sc.scrollTop=top;
+  renderPanel();
+}
+function renderPanel(){
+  $('#panel').innerHTML=panelExplore();
+  document.body.classList.toggle('sheet',!!ST.active&&matchMedia('(max-width:899px)').matches);
+  wire();
+}
+function select(id){
+  ST.active=id;
+  render(true);
+  const el=$('#screen').querySelector(`[data-hs="${id}"]`);
+  if(el){const sc=$('#screen'); const r=el.getBoundingClientRect(), s=sc.getBoundingClientRect(); if(r.top<s.top||r.bottom>s.bottom) sc.scrollTo({top:sc.scrollTop+r.top-s.top-60,behavior:'smooth'});}
+  if(!matchMedia('(max-width:899px)').matches){const pc=$('#panel'); const r=pc.getBoundingClientRect(); if(r.top<0) window.scrollTo({top:window.scrollY+r.top-12,behavior:'smooth'});}
+  else{$('#panel').scrollTop=0;}
+}
+
+/* ============ TƯƠNG TÁC ============ */
+document.querySelectorAll('[data-screen]').forEach(b=>b.onclick=()=>{ST.screen=b.dataset.screen; ST.active=null; save(); render();});
+$('#backdrop').onclick=()=>{ST.active=null; render(true);};
+$('#screen').addEventListener('click',e=>{
+  const h=e.target.closest('[data-hs]'); if(h) select(h.dataset.hs);
+});
+function wire(){
+  document.querySelectorAll('#panel [data-go]').forEach(b=>b.onclick=()=>select(b.dataset.go));
+  const cs=$('#closeSheet'); if(cs) cs.onclick=()=>{ST.active=null; render(true);};
+  const gp=$('#go-product'); if(gp) gp.onclick=()=>{ST.screen='product'; ST.active=null; save(); render();};
+  // widgets
+  if($('#n-in')){const f=()=>nameCheck(); $('#n-in').oninput=f; f();
+    $('#n-good').onclick=()=>{$('#n-in').value='Lumi Sơn nội thất Acrylic gốc nước lau chùi được, ít mùi, màu trắng sứ, thùng 18L'; f();};
+    $('#n-bad').onclick=()=>{$('#n-in').value='Sơn giảm giá 20% hot trend TikTok ✨ shop Minh Anh'; f();};}
+  if($('#d-in')){$('#d-in').oninput=descCheck; descCheck();}
+  if($('#c-list')){['c-list','c-km','c-combo','c-vou','c-fee','c-aff','c-cost'].forEach(i=>$('#'+i).oninput=calc); calc();}
+  if($('#v-n')){['v-n','v-mb','v-usp','v-ratio'].forEach(i=>{$('#'+i).oninput=vidCheck;$('#'+i).onchange=vidCheck;}); vidCheck();}
+}
+const RX={emoji:/\p{Extended_Pictographic}/u, sym:/[}{~$^<>!*#@;%|\\=+_`★☆♥]/, phone:/(\+?84|0)[\s.\-]?\d{2,3}[\s.\-]?\d{3}[\s.\-]?\d{3,4}|\b\d{9,11}\b/, link:/(https?:\/\/|www\.|bit\.ly|\.com\b|\.vn\b|zalo|facebook|fb\.)/i,
+  promo:/(giảm giá|giảm \d|\d+\s?%|sale|khuyến mãi|freeship|free ship|miễn phí vận chuyển|giá rẻ|rẻ nhất|\bhot\b|trend)/i,
+  plat:/(tiktok|tik tok|shopee|lazada|tiki|sendo)/i, seller:/\b(shop|cửa hàng)\s+\p{Lu}/u,
+  hype:/(số 1|số một|tốt nhất|100\s?%|vĩnh viễn|trọn đời|cam kết khỏi|chữa|diệt sạch|tuyệt đối|thần kỳ)/i};
+function li(cls,ico,t){return `<li class="${cls}"><b>${ico}</b><span>${t}</span></li>`}
+function nameCheck(){
+  const v=$('#n-in').value.trim(); const out=[]; const len=[...v].length;
+  out.push(len>255?li('no','✕',`Quá dài: ${len}/255 ký tự`):len<40?li('warn','!',`${len} ký tự: nên từ 40 ký tự trở lên để đủ từ khóa`):li('ok','✓',`Độ dài ${len}/255 ký tự`));
+  out.push(RX.emoji.test(v)||RX.sym.test(v)?li('no','✕','Có emoji hoặc ký tự đặc biệt'):li('ok','✓','Không có ký tự đặc biệt'));
+  out.push(RX.promo.test(v)?li('no','✕','Có thông tin khuyến mãi'):li('ok','✓','Không có thông tin khuyến mãi'));
+  out.push(RX.plat.test(v)?li('no','✕','Nhắc đến TikTok hoặc nền tảng khác'):li('ok','✓','Không nhắc TikTok hay nền tảng khác'));
+  out.push(RX.link.test(v)||RX.phone.test(v)?li('no','✕','Có URL hoặc thông tin liên hệ'):li('ok','✓','Không có URL, thông tin liên hệ'));
+  out.push(RX.seller.test(v)?li('warn','!','Có vẻ đang ghi tên người bán/tên shop'):li('ok','✓','Không thấy tên người bán'));
+  $('#n-out').innerHTML=out.join('');
+  const chars=[...v]; const cut=chars.slice(0,38).join('');
+  $('#n-prev').innerHTML=`Trên điện thoại khách thường chỉ thấy: <mark>${esc(cut)}</mark>${chars.length>38?'…':''}<br><span style="color:var(--muted);font-size:12px">Từ khóa chính đã nằm trong phần này chưa?</span>`;
+}
+function descCheck(){
+  const v=$('#d-in').value; const n=[...v].length; const words=(v.trim().match(/\S+/g)||[]).length; const out=[];
+  out.push(words<30?li('no','✕',`${words} từ: bắt buộc tối thiểu 30 từ`):li('ok','✓',`${words} từ (tối thiểu 30)`));
+  out.push(n>=500?li('ok','✓',`${n.toLocaleString('vi-VN')} ký tự (khuyến nghị từ 500)`):li('warn','!',`${n.toLocaleString('vi-VN')} ký tự: nên viết từ 500 ký tự trở lên`));
+  const secs=[['giới thiệu','Giới thiệu'],['ưu điểm','Ưu điểm nổi bật'],['thông số','Thông số kỹ thuật'],['hướng dẫn','Hướng dẫn sử dụng']];
+  const miss=secs.filter(s=>!v.toLowerCase().includes(s[0])).map(s=>s[1]);
+  out.push(miss.length?li('warn','!','Thiếu đoạn: '+miss.join(', ')):li('ok','✓','Đủ 4 đoạn nội dung'));
+  out.push(/(an toàn|cảnh báo|lưu ý|xa tầm tay|thoáng khí|không nuốt|tránh)/i.test(v)?li('ok','✓','Có thông tin an toàn/cảnh báo'):li('warn','!','Chưa thấy thông tin an toàn, cảnh báo'));
+  out.push(RX.hype.test(v)?li('no','✕','Có tuyên bố phóng đại (số 1, 100%, tốt nhất…)'):li('ok','✓','Không thấy tuyên bố phóng đại'));
+  out.push(RX.phone.test(v)||RX.link.test(v)||/(shopee|lazada|tiki|sendo)/i.test(v)?li('no','✕','Có SĐT, link hoặc tên sàn khác'):li('ok','✓','Không có SĐT, link, tên sàn khác'));
+  $('#d-out').innerHTML=out.join('');
+}
+function vidCheck(){
+  const n=+$('#v-n').value, mb=+$('#v-mb').value, u=+$('#v-usp').value, r=$('#v-ratio').value;
+  $('#v-out').innerHTML=[ n<=1?li('ok','✓',`${n} video (tối đa 1)`):li('no','✕',`${n} video: mỗi sản phẩm tối đa 1 video`),
+   mb<=5?li('ok','✓',`${mb}MB (tối đa 5MB)`):li('no','✕',`${mb}MB: vượt 5MB`),
+   u>=1&&u<=2?li('ok','✓',`${u} điểm bán: đúng trọng tâm`):li('warn','!',`${u} điểm bán: nên tập trung 1-2 điểm`),
+   r==='916'?li('ok','✓','Video dọc 9:16'):li('warn','!','Nên ưu tiên video dọc 9:16')].join('');
+}
+function calc(){
+  const g=id=>Math.max(0,+$('#'+id).value||0);
+  const list=g('c-list'), km=g('c-km'), combo=g('c-combo'), vou=g('c-vou'), fee=g('c-fee'), aff=g('c-aff'), cost=g('c-cost');
+  const a=list*(1-km/100), b=a*(1-combo/100), pay=Math.max(0,b-vou), feeV=pay*fee/100, affV=pay*aff/100, net=pay-feeV-affV, profit=net-cost;
+  const max=Math.max(list,cost,1);
+  const rows=[['Giá gốc',list,'#C9C4CC'],['Sau chiết khấu',a,'#FFB3C1'],['Sau combo/sỉ',b,'#FF7A93'],['Khách trả',pay,'#FE2C55'],['Thực nhận',net,profit>=0?'#137A4C':'#B42318'],['Giá vốn',cost,'#161823']];
+  $('#c-wf').innerHTML=rows.map(r=>`<div class="r"><span>${r[0]}</span><span class="tr"><i style="width:${Math.min(100,r[1]/max*100)}%;background:${r[2]}"></i></span><span class="v">${fmt(r[1])}</span></div>`).join('')+
+   `<div class="r" style="color:var(--muted)"><span>Phí sàn</span><span></span><span class="v">−${fmt(feeV)}</span></div><div class="r" style="color:var(--muted)"><span>Hoa hồng KOC</span><span></span><span class="v">−${fmt(affV)}</span></div>`;
+  const m=pay?profit/pay*100:0;
+  $('#c-verdict').innerHTML=profit>=0?`<div class="verdict good">Lãi ${fmt(profit)}/sản phẩm · biên ${m.toFixed(1)}% trên giá khách trả</div>`:`<div class="verdict bad">Lỗ ${fmt(-profit)}/sản phẩm. Giảm bớt một lớp ưu đãi hoặc hạ hoa hồng trước khi chạy.</div>`;
+}
+addEventListener('keydown',e=>{if(e.key==='Escape'&&ST.active){ST.active=null;render(true);}});
+addEventListener('resize',()=>document.body.classList.toggle('sheet',!!ST.active&&matchMedia('(max-width:899px)').matches));
+render();
+</script>
+</body>
+</html>
